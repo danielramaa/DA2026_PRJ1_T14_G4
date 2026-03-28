@@ -8,4 +8,5 @@ include_directories(include)
 add_executable(DA2026_PRJ1_T14_G3
         src/main.cpp
         include/types.h
-        include/graph.h)
+        include/graph.h
+        include/parser.h)
