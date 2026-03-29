@@ -60,7 +60,20 @@ Dataset parseInputFile(const std::string& filename) {
 
         if (line[0] == '#') continue;
 
-        // TODO: processar cada secção
+        if (section == SUBMISSIONS) {
+            auto f = splitCSV(line);
+            if (f.size() < 5) continue;
+
+            Submission s;
+            s.id          = std::stoi(f[0]);
+            s.title       = f[1];
+            s.authors     = f[2];
+            s.email       = f[3];
+            s.primaryTopic   = std::stoi(f[4]);
+            s.secondaryTopic = (f.size() > 5 && !f[5].empty()) ? std::stoi(f[5]) : 0;
+
+            ds.submissions.push_back(s);
+        }
     }
 
     return ds;
