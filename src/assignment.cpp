@@ -7,6 +7,7 @@
 #include <set>
 #include <queue>
 #include <algorithm>
+#include <fstream>
 
 // node IDs
 static const int SOURCE   = 0;
@@ -163,8 +164,12 @@ AssignmentResult runAssignment(const Dataset& ds, int mode) {
         for (auto e : vSub->getAdj())
             if (e->getDest()->getInfo() >= REV_BASE && e->getFlow() > 0.5)
                 count++;
-        if (count < minR)
+        if (count < minR){
             result.success = false;
+            int missing = minR - count;
+            int domain  = ds.submissions[i].primaryTopic;
+            result.missing.push_back({ds.submissions[i].id, domain, missing});
+        }
     }
 
     // sort assignments
@@ -175,4 +180,52 @@ AssignmentResult runAssignment(const Dataset& ds, int mode) {
         });
 
     return result;
+}
+
+void writeOutput(const std::string& filename,
+                 const AssignmentResult& result,
+                 const std::vector<int>& riskyReviewers,
+                 int riskK)
+{
+    std::ofstream out(filename);
+    if (!out.is_open()) {
+        std::cerr << "Error: cannot open output file: " << filename << "\n";
+        return;
+    }
+
+    // assignments
+    out << "#SubmissionId,ReviewerId,Match\n";
+    for (auto& a : result.assignments)
+        out << a.submissionId << ", " << a.reviewerId << ", " << a.matchedDomain << "\n";
+
+    // dual view: reviewer → submissions
+    out << "#ReviewerId,SubmissionId,Match\n";
+    std::map<int, std::vector<const Assignment*>> revMap;
+    for (auto& a : result.assignments)
+        revMap[a.reviewerId].push_back(&a);
+    for (auto& [revId, list] : revMap) {
+        for (auto* a : list)
+            out << a->reviewerId << ", " << a->submissionId << ", " << a->matchedDomain << "\n";
+    }
+
+    out << "#Total: " << result.assignments.size() << "\n";
+
+    // missing reviews in submissons
+    if (!result.missing.empty()) {
+        out << "#SubmissionId,Domain,MissingReviews\n";
+        for (auto& [subId, domain, count] : result.missing)
+            out << subId << ", " << domain << ", " << count << "\n";
+    }
+
+    // risk analysis
+    if (riskK > 0) {
+        out << "#Risk Analysis: " << riskK << "\n";
+        for (size_t i = 0; i < riskyReviewers.size(); i++) {
+            if (i > 0) out << ", ";
+            out << riskyReviewers[i];
+        }
+        out << "\n";
+    }
+
+    out.close();
 }

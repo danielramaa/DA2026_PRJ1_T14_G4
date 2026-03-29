@@ -1,15 +1,17 @@
-#include "types.h"
+#include "assignment.h"
 #include "parser.h"
-#include "menu.h"
 #include <iostream>
 
-int main(int argc, char* argv[]) {
-    if (argc >= 3 && std::string(argv[1]) == "-b") {
-        std::string inputFile  = argv[2];
-        std::string outputFile = (argc >= 4) ? argv[3] : "";
-        runBatchMode(inputFile, outputFile);
-    } else {
-        runInteractiveMenu();
-    }
+int main() {
+    Dataset ds = parseInputFile("dataset1.csv");
+    AssignmentResult result = runAssignment(ds, 1);
+
+    std::cout << "Success: " << result.success << "\n";
+    std::cout << "Assignments: " << result.assignments.size() << "\n";
+    std::cout << "Missing: " << result.missing.size() << "\n";
+
+    writeOutput(ds.control.outputFileName, result, {}, 0);
+    std::cout << "Output written to: " << ds.control.outputFileName << "\n";
+
     return 0;
 }

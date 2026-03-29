@@ -9,6 +9,7 @@
 #include "graph.h"
 #include <vector>
 #include <string>
+#include <tuple>
 
 struct Assignment {
     int submissionId;
@@ -19,8 +20,14 @@ struct Assignment {
 struct AssignmentResult {
     bool success;
     std::vector<Assignment> assignments;
+    std::vector<std::tuple<int,int,int>> missing; // {submissionId, domain, missingCount}
 };
 
 AssignmentResult runAssignment(const Dataset& ds, int mode);
+
+void writeOutput(const std::string& filename,
+                 const AssignmentResult& result,
+                 const std::vector<int>& riskyReviewers,
+                 int riskK);
 
 #endif
