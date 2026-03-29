@@ -74,6 +74,20 @@ Dataset parseInputFile(const std::string& filename) {
 
             ds.submissions.push_back(s);
         }
+
+        else if (section == REVIEWERS) {
+            auto f = splitCSV(line);
+            if (f.size() < 4) continue;
+
+            Reviewer r;
+            r.id           = std::stoi(f[0]);
+            r.name         = f[1];
+            r.email        = f[2];
+            r.primaryTopic   = std::stoi(f[3]);
+            r.secondaryTopic = (f.size() > 4 && !f[4].empty()) ? std::stoi(f[4]) : 0;
+
+            ds.reviewers.push_back(r);
+        }
     }
 
     return ds;
