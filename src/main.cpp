@@ -1,3 +1,7 @@
+/**
+ * @file main.cpp
+ * @brief Application entry point and CLI mode selection.
+ */
 #include "menu.h"
 #include <string>
 

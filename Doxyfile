@@ -2189,7 +2189,8 @@ EXTRA_PACKAGES         =
 # is highly recommended to start with a default header using
 # doxygen -w latex new_header.tex new_footer.tex new_stylesheet.sty
 # and then modify the file new_header.tex. See also section "Doxygen usage" for
-# information on how to generate the default header that Doxygen normally uses.
+# information on how to generate the default header that Doxygen normally
+# uses.
 #
 # Note: Only use a user-defined header if you know what you are doing!
 # Note: The header is subject to change so you typically have to regenerate the
@@ -2643,8 +2644,8 @@ ALLEXTERNALS           = NO
 EXTERNAL_GROUPS        = YES
 
 # If the EXTERNAL_PAGES tag is set to YES, all external pages will be listed in
-# the related pages index. If set to NO, only the current project's pages will
-# be listed.
+# the related pages index. If set to NO, only the current project's pages will be
+# listed.
 # The default value is: YES.
 
 EXTERNAL_PAGES         = YES

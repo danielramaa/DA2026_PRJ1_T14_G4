@@ -1,6 +1,7 @@
-//
-// Created by Daniel on 29/03/2026.
-//
+/**
+ * @file assignment.cpp
+ * @brief Assignment, max-flow, output writing, and risk analysis implementation.
+ */
 
 #include "assignment.h"
 #include <map>

@@ -104,7 +104,7 @@ $(function(){initNavTree('graph_8h_source.html','',''); });
 <div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &lt;algorithm&gt;</span></div>
 <div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
 <div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="keyword">template</span> &lt;<span class="keyword">class</span> T&gt;</div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="keyword">class </span><a class="code hl_class" href="classEdge.html">Edge</a>;</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="keyword">class </span><a class="code hl_class" href="class_edge.html">Edge</a>;</div>
 <div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> </div>
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="preprocessor">#define INF std::numeric_limits&lt;double&gt;::max()</span></div>
 <div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
@@ -112,7 +112,7 @@ $(function(){initNavTree('graph_8h_source.html','',''); });
 <div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span> </div>
 <div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="keyword">template</span> &lt;<span class="keyword">class</span> T&gt;</div>
 <div class="foldopen" id="foldopen00021" data-start="{" data-end="};">
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno"><a class="line" href="classVertex.html">   21</a></span><span class="keyword">class </span>Vertex {</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno"><a class="line" href="class_vertex.html">   21</a></span><span class="keyword">class </span>Vertex {</div>
 <div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="keyword">public</span>:</div>
 <div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    Vertex(T in);</div>
 <div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    <span class="keywordtype">bool</span> operator&lt;(Vertex&lt;T&gt; &amp; vertex) <span class="keyword">const</span>; <span class="comment">// // required by MutablePriorityQueue</span></div>
@@ -123,7 +123,7 @@ $(function(){initNavTree('graph_8h_source.html','',''); });
 <div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    <span class="keywordtype">bool</span> isProcessing() <span class="keyword">const</span>;</div>
 <div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> getIndegree() <span class="keyword">const</span>;</div>
 <div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    <span class="keywordtype">double</span> getDist() <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    <a class="code hl_class" href="classEdge.html">Edge&lt;T&gt;</a> *getPath() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    <a class="code hl_class" href="class_edge.html">Edge&lt;T&gt;</a> *getPath() <span class="keyword">const</span>;</div>
 <div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    std::vector&lt;Edge&lt;T&gt; *&gt; getIncoming() <span class="keyword">const</span>;</div>
 <div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span> </div>
 <div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    <span class="keywordtype">void</span> setInfo(T info);</div>
@@ -137,8 +137,8 @@ $(function(){initNavTree('graph_8h_source.html','',''); });
 <div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span> </div>
 <div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    <span class="keywordtype">void</span> setIndegree(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> indegree);</div>
 <div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    <span class="keywordtype">void</span> setDist(<span class="keywordtype">double</span> dist);</div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    <span class="keywordtype">void</span> setPath(<a class="code hl_class" href="classEdge.html">Edge&lt;T&gt;</a> *path);</div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    <a class="code hl_class" href="classEdge.html">Edge&lt;T&gt;</a> * addEdge(Vertex&lt;T&gt; *dest, <span class="keywordtype">double</span> w);</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    <span class="keywordtype">void</span> setPath(<a class="code hl_class" href="class_edge.html">Edge&lt;T&gt;</a> *path);</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    <a class="code hl_class" href="class_edge.html">Edge&lt;T&gt;</a> * addEdge(Vertex&lt;T&gt; *dest, <span class="keywordtype">double</span> w);</div>
 <div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    <span class="keywordtype">bool</span> removeEdge(T in);</div>
 <div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    <span class="keywordtype">void</span> removeOutgoingEdges();</div>
 <div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span> </div>
@@ -152,13 +152,13 @@ $(function(){initNavTree('graph_8h_source.html','',''); });
 <div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>    <span class="keywordtype">int</span> low = -1, num = -1; <span class="comment">// used by SCC Tarjan</span></div>
 <div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> indegree; <span class="comment">// used by topsort</span></div>
 <div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>    <span class="keywordtype">double</span> dist = 0;</div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>    <a class="code hl_class" href="classEdge.html">Edge&lt;T&gt;</a> *path = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>    <a class="code hl_class" href="class_edge.html">Edge&lt;T&gt;</a> *path = <span class="keyword">nullptr</span>;</div>
 <div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span> </div>
 <div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>    std::vector&lt;Edge&lt;T&gt; *&gt; incoming; <span class="comment">// incoming edges</span></div>
 <div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span> </div>
 <div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>    <span class="keywordtype">int</span> queueIndex = 0;         <span class="comment">// required by MutablePriorityQueue and UFDS</span></div>
 <div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span> </div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>    <span class="keywordtype">void</span> deleteEdge(<a class="code hl_class" href="classEdge.html">Edge&lt;T&gt;</a> *edge);</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>    <span class="keywordtype">void</span> deleteEdge(<a class="code hl_class" href="class_edge.html">Edge&lt;T&gt;</a> *edge);</div>
 <div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>};</div>
 </div>
 <div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span> </div>
@@ -166,14 +166,14 @@ $(function(){initNavTree('graph_8h_source.html','',''); });
 <div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span> </div>
 <div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span><span class="keyword">template</span> &lt;<span class="keyword">class</span> T&gt;</div>
 <div class="foldopen" id="foldopen00073" data-start="{" data-end="};">
-<div class="line"><a id="l00073" name="l00073"></a><span class="lineno"><a class="line" href="classEdge.html">   73</a></span><span class="keyword">class </span>Edge {</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno"><a class="line" href="class_edge.html">   73</a></span><span class="keyword">class </span>Edge {</div>
 <div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span><span class="keyword">public</span>:</div>
-<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>    Edge(<a class="code hl_class" href="classVertex.html">Vertex&lt;T&gt;</a> *orig, <a class="code hl_class" href="classVertex.html">Vertex&lt;T&gt;</a> *dest, <span class="keywordtype">double</span> w);</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>    Edge(<a class="code hl_class" href="class_vertex.html">Vertex&lt;T&gt;</a> *orig, <a class="code hl_class" href="class_vertex.html">Vertex&lt;T&gt;</a> *dest, <span class="keywordtype">double</span> w);</div>
 <div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span> </div>
-<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>    <a class="code hl_class" href="classVertex.html">Vertex&lt;T&gt;</a> * getDest() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>    <a class="code hl_class" href="class_vertex.html">Vertex&lt;T&gt;</a> * getDest() <span class="keyword">const</span>;</div>
 <div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>    <span class="keywordtype">double</span> getWeight() <span class="keyword">const</span>;</div>
 <div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>    <span class="keywordtype">bool</span> isSelected() <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>    <a class="code hl_class" href="classVertex.html">Vertex&lt;T&gt;</a> * getOrig() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>    <a class="code hl_class" href="class_vertex.html">Vertex&lt;T&gt;</a> * getOrig() <span class="keyword">const</span>;</div>
 <div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>    Edge&lt;T&gt; *getReverse() <span class="keyword">const</span>;</div>
 <div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>    <span class="keywordtype">double</span> getFlow() <span class="keyword">const</span>;</div>
 <div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span> </div>
@@ -181,14 +181,14 @@ $(function(){initNavTree('graph_8h_source.html','',''); });
 <div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>    <span class="keywordtype">void</span> setReverse(Edge&lt;T&gt; *reverse);</div>
 <div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>    <span class="keywordtype">void</span> setFlow(<span class="keywordtype">double</span> flow);</div>
 <div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span><span class="keyword">protected</span>:</div>
-<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>    <a class="code hl_class" href="classVertex.html">Vertex&lt;T&gt;</a> * dest; <span class="comment">// destination vertex</span></div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>    <a class="code hl_class" href="class_vertex.html">Vertex&lt;T&gt;</a> * dest; <span class="comment">// destination vertex</span></div>
 <div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>    <span class="keywordtype">double</span> weight; <span class="comment">// edge weight, can also be used for capacity</span></div>
 <div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span> </div>
 <div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>    <span class="comment">// auxiliary fields</span></div>
 <div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>    <span class="keywordtype">bool</span> selected = <span class="keyword">false</span>;</div>
 <div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span> </div>
 <div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>    <span class="comment">// used for bidirectional edges</span></div>
-<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>    <a class="code hl_class" href="classVertex.html">Vertex&lt;T&gt;</a> *orig;</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>    <a class="code hl_class" href="class_vertex.html">Vertex&lt;T&gt;</a> *orig;</div>
 <div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>    Edge&lt;T&gt; *reverse = <span class="keyword">nullptr</span>;</div>
 <div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span> </div>
 <div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>    <span class="keywordtype">double</span> flow; <span class="comment">// for flow-related problems</span></div>
@@ -199,13 +199,13 @@ $(function(){initNavTree('graph_8h_source.html','',''); });
 <div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span> </div>
 <div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span><span class="keyword">template</span> &lt;<span class="keyword">class</span> T&gt;</div>
 <div class="foldopen" id="foldopen00104" data-start="{" data-end="};">
-<div class="line"><a id="l00104" name="l00104"></a><span class="lineno"><a class="line" href="classGraph.html">  104</a></span><span class="keyword">class </span><a class="code hl_class" href="classGraph.html">Graph</a> {</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno"><a class="line" href="class_graph.html">  104</a></span><span class="keyword">class </span><a class="code hl_class" href="class_graph.html">Graph</a> {</div>
 <div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span><span class="keyword">public</span>:</div>
-<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>    <a class="code hl_class" href="classGraph.html">~Graph</a>();</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>    <a class="code hl_class" href="class_graph.html">~Graph</a>();</div>
 <div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>    <span class="comment">/*</span></div>
 <div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span><span class="comment">    * Auxiliary function to find a vertex with a given the content.</span></div>
 <div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span><span class="comment">    */</span></div>
-<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>    <a class="code hl_class" href="classVertex.html">Vertex&lt;T&gt;</a> *findVertex(<span class="keyword">const</span> T &amp;in) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>    <a class="code hl_class" href="class_vertex.html">Vertex&lt;T&gt;</a> *findVertex(<span class="keyword">const</span> T &amp;in) <span class="keyword">const</span>;</div>
 <div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>    <span class="comment">/*</span></div>
 <div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span><span class="comment">     *  Adds a vertex with a given content or info (in) to a graph (this).</span></div>
 <div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span><span class="comment">     *  Returns true if successful, and false if a vertex with that content already exists.</span></div>
@@ -254,8 +254,8 @@ $(function(){initNavTree('graph_8h_source.html','',''); });
 <div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span><span class="comment"> * with a given destination vertex (d) and edge weight (w).</span></div>
 <div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span><span class="comment"> */</span></div>
 <div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span><span class="keyword">template</span> &lt;<span class="keyword">class</span> T&gt;</div>
-<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span><a class="code hl_class" href="classEdge.html">Edge&lt;T&gt;</a> * Vertex&lt;T&gt;::addEdge(<a class="code hl_class" href="classVertex.html">Vertex&lt;T&gt;</a> *d, <span class="keywordtype">double</span> w) {</div>
-<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span>    <span class="keyword">auto</span> newEdge = <span class="keyword">new</span> <a class="code hl_class" href="classEdge.html">Edge&lt;T&gt;</a>(<span class="keyword">this</span>, d, w);</div>
+<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span><a class="code hl_class" href="class_edge.html">Edge&lt;T&gt;</a> * Vertex&lt;T&gt;::addEdge(<a class="code hl_class" href="class_vertex.html">Vertex&lt;T&gt;</a> *d, <span class="keywordtype">double</span> w) {</div>
+<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span>    <span class="keyword">auto</span> newEdge = <span class="keyword">new</span> <a class="code hl_class" href="class_edge.html">Edge&lt;T&gt;</a>(<span class="keyword">this</span>, d, w);</div>
 <div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span>    adj.push_back(newEdge);</div>
 <div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span>    d-&gt;incoming.push_back(newEdge);</div>
 <div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span>    <span class="keywordflow">return</span> newEdge;</div>
@@ -271,8 +271,8 @@ $(function(){initNavTree('graph_8h_source.html','',''); });
 <div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span>    <span class="keywordtype">bool</span> removedEdge = <span class="keyword">false</span>;</div>
 <div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span>    <span class="keyword">auto</span> it = adj.begin();</div>
 <div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span>    <span class="keywordflow">while</span> (it != adj.end()) {</div>
-<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span>        <a class="code hl_class" href="classEdge.html">Edge&lt;T&gt;</a> *edge = *it;</div>
-<div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span>        <a class="code hl_class" href="classVertex.html">Vertex&lt;T&gt;</a> *dest = edge-&gt;getDest();</div>
+<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span>        <a class="code hl_class" href="class_edge.html">Edge&lt;T&gt;</a> *edge = *it;</div>
+<div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span>        <a class="code hl_class" href="class_vertex.html">Vertex&lt;T&gt;</a> *dest = edge-&gt;getDest();</div>
 <div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span>        <span class="keywordflow">if</span> (dest-&gt;getInfo() == in) {</div>
 <div class="line"><a id="l00181" name="l00181"></a><span class="lineno">  181</span>            it = adj.erase(it);</div>
 <div class="line"><a id="l00182" name="l00182"></a><span class="lineno">  182</span>            deleteEdge(edge);</div>
@@ -292,14 +292,14 @@ $(function(){initNavTree('graph_8h_source.html','',''); });
 <div class="line"><a id="l00196" name="l00196"></a><span class="lineno">  196</span><span class="keywordtype">void</span> Vertex&lt;T&gt;::removeOutgoingEdges() {</div>
 <div class="line"><a id="l00197" name="l00197"></a><span class="lineno">  197</span>    <span class="keyword">auto</span> it = adj.begin();</div>
 <div class="line"><a id="l00198" name="l00198"></a><span class="lineno">  198</span>    <span class="keywordflow">while</span> (it != adj.end()) {</div>
-<div class="line"><a id="l00199" name="l00199"></a><span class="lineno">  199</span>        <a class="code hl_class" href="classEdge.html">Edge&lt;T&gt;</a> *edge = *it;</div>
+<div class="line"><a id="l00199" name="l00199"></a><span class="lineno">  199</span>        <a class="code hl_class" href="class_edge.html">Edge&lt;T&gt;</a> *edge = *it;</div>
 <div class="line"><a id="l00200" name="l00200"></a><span class="lineno">  200</span>        it = adj.erase(it);</div>
 <div class="line"><a id="l00201" name="l00201"></a><span class="lineno">  201</span>        deleteEdge(edge);</div>
 <div class="line"><a id="l00202" name="l00202"></a><span class="lineno">  202</span>    }</div>
 <div class="line"><a id="l00203" name="l00203"></a><span class="lineno">  203</span>}</div>
 <div class="line"><a id="l00204" name="l00204"></a><span class="lineno">  204</span> </div>
 <div class="line"><a id="l00205" name="l00205"></a><span class="lineno">  205</span><span class="keyword">template</span> &lt;<span class="keyword">class</span> T&gt;</div>
-<div class="line"><a id="l00206" name="l00206"></a><span class="lineno">  206</span><span class="keywordtype">bool</span> Vertex&lt;T&gt;::operator&lt;(<a class="code hl_class" href="classVertex.html">Vertex&lt;T&gt;</a> &amp; vertex)<span class="keyword"> const </span>{</div>
+<div class="line"><a id="l00206" name="l00206"></a><span class="lineno">  206</span><span class="keywordtype">bool</span> Vertex&lt;T&gt;::operator&lt;(<a class="code hl_class" href="class_vertex.html">Vertex&lt;T&gt;</a> &amp; vertex)<span class="keyword"> const </span>{</div>
 <div class="line"><a id="l00207" name="l00207"></a><span class="lineno">  207</span>    <span class="keywordflow">return</span> this-&gt;dist &lt; vertex.dist;</div>
 <div class="line"><a id="l00208" name="l00208"></a><span class="lineno">  208</span>}</div>
 <div class="line"><a id="l00209" name="l00209"></a><span class="lineno">  209</span> </div>
@@ -354,7 +354,7 @@ $(function(){initNavTree('graph_8h_source.html','',''); });
 <div class="line"><a id="l00258" name="l00258"></a><span class="lineno">  258</span>}</div>
 <div class="line"><a id="l00259" name="l00259"></a><span class="lineno">  259</span> </div>
 <div class="line"><a id="l00260" name="l00260"></a><span class="lineno">  260</span><span class="keyword">template</span> &lt;<span class="keyword">class</span> T&gt;</div>
-<div class="line"><a id="l00261" name="l00261"></a><span class="lineno">  261</span><a class="code hl_class" href="classEdge.html">Edge&lt;T&gt;</a> *Vertex&lt;T&gt;::getPath()<span class="keyword"> const </span>{</div>
+<div class="line"><a id="l00261" name="l00261"></a><span class="lineno">  261</span><a class="code hl_class" href="class_edge.html">Edge&lt;T&gt;</a> *Vertex&lt;T&gt;::getPath()<span class="keyword"> const </span>{</div>
 <div class="line"><a id="l00262" name="l00262"></a><span class="lineno">  262</span>    <span class="keywordflow">return</span> this-&gt;path;</div>
 <div class="line"><a id="l00263" name="l00263"></a><span class="lineno">  263</span>}</div>
 <div class="line"><a id="l00264" name="l00264"></a><span class="lineno">  264</span> </div>
@@ -389,13 +389,13 @@ $(function(){initNavTree('graph_8h_source.html','',''); });
 <div class="line"><a id="l00293" name="l00293"></a><span class="lineno">  293</span>}</div>
 <div class="line"><a id="l00294" name="l00294"></a><span class="lineno">  294</span> </div>
 <div class="line"><a id="l00295" name="l00295"></a><span class="lineno">  295</span><span class="keyword">template</span> &lt;<span class="keyword">class</span> T&gt;</div>
-<div class="line"><a id="l00296" name="l00296"></a><span class="lineno">  296</span><span class="keywordtype">void</span> Vertex&lt;T&gt;::setPath(<a class="code hl_class" href="classEdge.html">Edge&lt;T&gt;</a> *path) {</div>
+<div class="line"><a id="l00296" name="l00296"></a><span class="lineno">  296</span><span class="keywordtype">void</span> Vertex&lt;T&gt;::setPath(<a class="code hl_class" href="class_edge.html">Edge&lt;T&gt;</a> *path) {</div>
 <div class="line"><a id="l00297" name="l00297"></a><span class="lineno">  297</span>    this-&gt;path = path;</div>
 <div class="line"><a id="l00298" name="l00298"></a><span class="lineno">  298</span>}</div>
 <div class="line"><a id="l00299" name="l00299"></a><span class="lineno">  299</span> </div>
 <div class="line"><a id="l00300" name="l00300"></a><span class="lineno">  300</span><span class="keyword">template</span> &lt;<span class="keyword">class</span> T&gt;</div>
-<div class="line"><a id="l00301" name="l00301"></a><span class="lineno">  301</span><span class="keywordtype">void</span> Vertex&lt;T&gt;::deleteEdge(<a class="code hl_class" href="classEdge.html">Edge&lt;T&gt;</a> *edge) {</div>
-<div class="line"><a id="l00302" name="l00302"></a><span class="lineno">  302</span>    <a class="code hl_class" href="classVertex.html">Vertex&lt;T&gt;</a> *dest = edge-&gt;getDest();</div>
+<div class="line"><a id="l00301" name="l00301"></a><span class="lineno">  301</span><span class="keywordtype">void</span> Vertex&lt;T&gt;::deleteEdge(<a class="code hl_class" href="class_edge.html">Edge&lt;T&gt;</a> *edge) {</div>
+<div class="line"><a id="l00302" name="l00302"></a><span class="lineno">  302</span>    <a class="code hl_class" href="class_vertex.html">Vertex&lt;T&gt;</a> *dest = edge-&gt;getDest();</div>
 <div class="line"><a id="l00303" name="l00303"></a><span class="lineno">  303</span>    <span class="comment">// Remove the corresponding edge from the incoming list</span></div>
 <div class="line"><a id="l00304" name="l00304"></a><span class="lineno">  304</span>    <span class="keyword">auto</span> it = dest-&gt;incoming.begin();</div>
 <div class="line"><a id="l00305" name="l00305"></a><span class="lineno">  305</span>    <span class="keywordflow">while</span> (it != dest-&gt;incoming.end()) {</div>
@@ -412,10 +412,10 @@ $(function(){initNavTree('graph_8h_source.html','',''); });
 <div class="line"><a id="l00316" name="l00316"></a><span class="lineno">  316</span><span class="comment">/********************** Edge  ****************************/</span></div>
 <div class="line"><a id="l00317" name="l00317"></a><span class="lineno">  317</span> </div>
 <div class="line"><a id="l00318" name="l00318"></a><span class="lineno">  318</span><span class="keyword">template</span> &lt;<span class="keyword">class</span> T&gt;</div>
-<div class="line"><a id="l00319" name="l00319"></a><span class="lineno">  319</span>Edge&lt;T&gt;::Edge(<a class="code hl_class" href="classVertex.html">Vertex&lt;T&gt;</a> *orig, <a class="code hl_class" href="classVertex.html">Vertex&lt;T&gt;</a> *dest, <span class="keywordtype">double</span> w): orig(orig), dest(dest), weight(w) {}</div>
+<div class="line"><a id="l00319" name="l00319"></a><span class="lineno">  319</span>Edge&lt;T&gt;::Edge(<a class="code hl_class" href="class_vertex.html">Vertex&lt;T&gt;</a> *orig, <a class="code hl_class" href="class_vertex.html">Vertex&lt;T&gt;</a> *dest, <span class="keywordtype">double</span> w): orig(orig), dest(dest), weight(w) {}</div>
 <div class="line"><a id="l00320" name="l00320"></a><span class="lineno">  320</span> </div>
 <div class="line"><a id="l00321" name="l00321"></a><span class="lineno">  321</span><span class="keyword">template</span> &lt;<span class="keyword">class</span> T&gt;</div>
-<div class="line"><a id="l00322" name="l00322"></a><span class="lineno">  322</span><a class="code hl_class" href="classVertex.html">Vertex&lt;T&gt;</a> * Edge&lt;T&gt;::getDest()<span class="keyword"> const </span>{</div>
+<div class="line"><a id="l00322" name="l00322"></a><span class="lineno">  322</span><a class="code hl_class" href="class_vertex.html">Vertex&lt;T&gt;</a> * Edge&lt;T&gt;::getDest()<span class="keyword"> const </span>{</div>
 <div class="line"><a id="l00323" name="l00323"></a><span class="lineno">  323</span>    <span class="keywordflow">return</span> this-&gt;dest;</div>
 <div class="line"><a id="l00324" name="l00324"></a><span class="lineno">  324</span>}</div>
 <div class="line"><a id="l00325" name="l00325"></a><span class="lineno">  325</span> </div>
@@ -425,12 +425,12 @@ $(function(){initNavTree('graph_8h_source.html','',''); });
 <div class="line"><a id="l00329" name="l00329"></a><span class="lineno">  329</span>}</div>
 <div class="line"><a id="l00330" name="l00330"></a><span class="lineno">  330</span> </div>
 <div class="line"><a id="l00331" name="l00331"></a><span class="lineno">  331</span><span class="keyword">template</span> &lt;<span class="keyword">class</span> T&gt;</div>
-<div class="line"><a id="l00332" name="l00332"></a><span class="lineno">  332</span><a class="code hl_class" href="classVertex.html">Vertex&lt;T&gt;</a> * Edge&lt;T&gt;::getOrig()<span class="keyword"> const </span>{</div>
+<div class="line"><a id="l00332" name="l00332"></a><span class="lineno">  332</span><a class="code hl_class" href="class_vertex.html">Vertex&lt;T&gt;</a> * Edge&lt;T&gt;::getOrig()<span class="keyword"> const </span>{</div>
 <div class="line"><a id="l00333" name="l00333"></a><span class="lineno">  333</span>    <span class="keywordflow">return</span> this-&gt;orig;</div>
 <div class="line"><a id="l00334" name="l00334"></a><span class="lineno">  334</span>}</div>
 <div class="line"><a id="l00335" name="l00335"></a><span class="lineno">  335</span> </div>
 <div class="line"><a id="l00336" name="l00336"></a><span class="lineno">  336</span><span class="keyword">template</span> &lt;<span class="keyword">class</span> T&gt;</div>
-<div class="line"><a id="l00337" name="l00337"></a><span class="lineno">  337</span><a class="code hl_class" href="classEdge.html">Edge&lt;T&gt;</a> *Edge&lt;T&gt;::getReverse()<span class="keyword"> const </span>{</div>
+<div class="line"><a id="l00337" name="l00337"></a><span class="lineno">  337</span><a class="code hl_class" href="class_edge.html">Edge&lt;T&gt;</a> *Edge&lt;T&gt;::getReverse()<span class="keyword"> const </span>{</div>
 <div class="line"><a id="l00338" name="l00338"></a><span class="lineno">  338</span>    <span class="keywordflow">return</span> this-&gt;reverse;</div>
 <div class="line"><a id="l00339" name="l00339"></a><span class="lineno">  339</span>}</div>
 <div class="line"><a id="l00340" name="l00340"></a><span class="lineno">  340</span> </div>
@@ -450,7 +450,7 @@ $(function(){initNavTree('graph_8h_source.html','',''); });
 <div class="line"><a id="l00354" name="l00354"></a><span class="lineno">  354</span>}</div>
 <div class="line"><a id="l00355" name="l00355"></a><span class="lineno">  355</span> </div>
 <div class="line"><a id="l00356" name="l00356"></a><span class="lineno">  356</span><span class="keyword">template</span> &lt;<span class="keyword">class</span> T&gt;</div>
-<div class="line"><a id="l00357" name="l00357"></a><span class="lineno">  357</span><span class="keywordtype">void</span> Edge&lt;T&gt;::setReverse(<a class="code hl_class" href="classEdge.html">Edge&lt;T&gt;</a> *reverse) {</div>
+<div class="line"><a id="l00357" name="l00357"></a><span class="lineno">  357</span><span class="keywordtype">void</span> Edge&lt;T&gt;::setReverse(<a class="code hl_class" href="class_edge.html">Edge&lt;T&gt;</a> *reverse) {</div>
 <div class="line"><a id="l00358" name="l00358"></a><span class="lineno">  358</span>    this-&gt;reverse = reverse;</div>
 <div class="line"><a id="l00359" name="l00359"></a><span class="lineno">  359</span>}</div>
 <div class="line"><a id="l00360" name="l00360"></a><span class="lineno">  360</span> </div>
@@ -475,7 +475,7 @@ $(function(){initNavTree('graph_8h_source.html','',''); });
 <div class="line"><a id="l00379" name="l00379"></a><span class="lineno">  379</span><span class="comment"> * Auxiliary function to find a vertex with a given content.</span></div>
 <div class="line"><a id="l00380" name="l00380"></a><span class="lineno">  380</span><span class="comment"> */</span></div>
 <div class="line"><a id="l00381" name="l00381"></a><span class="lineno">  381</span><span class="keyword">template</span> &lt;<span class="keyword">class</span> T&gt;</div>
-<div class="line"><a id="l00382" name="l00382"></a><span class="lineno">  382</span><a class="code hl_class" href="classVertex.html">Vertex&lt;T&gt;</a> * Graph&lt;T&gt;::findVertex(<span class="keyword">const</span> T &amp;in)<span class="keyword"> const </span>{</div>
+<div class="line"><a id="l00382" name="l00382"></a><span class="lineno">  382</span><a class="code hl_class" href="class_vertex.html">Vertex&lt;T&gt;</a> * Graph&lt;T&gt;::findVertex(<span class="keyword">const</span> T &amp;in)<span class="keyword"> const </span>{</div>
 <div class="line"><a id="l00383" name="l00383"></a><span class="lineno">  383</span>    <span class="keywordflow">for</span> (<span class="keyword">auto</span> v : vertexSet)</div>
 <div class="line"><a id="l00384" name="l00384"></a><span class="lineno">  384</span>        <span class="keywordflow">if</span> (v-&gt;getInfo() == in)</div>
 <div class="line"><a id="l00385" name="l00385"></a><span class="lineno">  385</span>            <span class="keywordflow">return</span> v;</div>
@@ -500,7 +500,7 @@ $(function(){initNavTree('graph_8h_source.html','',''); });
 <div class="line"><a id="l00404" name="l00404"></a><span class="lineno">  404</span><span class="keywordtype">bool</span> Graph&lt;T&gt;::addVertex(<span class="keyword">const</span> T &amp;in) {</div>
 <div class="line"><a id="l00405" name="l00405"></a><span class="lineno">  405</span>    <span class="keywordflow">if</span> (findVertex(in) != <span class="keyword">nullptr</span>)</div>
 <div class="line"><a id="l00406" name="l00406"></a><span class="lineno">  406</span>        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a id="l00407" name="l00407"></a><span class="lineno">  407</span>    vertexSet.push_back(<span class="keyword">new</span> <a class="code hl_class" href="classVertex.html">Vertex&lt;T&gt;</a>(in));</div>
+<div class="line"><a id="l00407" name="l00407"></a><span class="lineno">  407</span>    vertexSet.push_back(<span class="keyword">new</span> <a class="code hl_class" href="class_vertex.html">Vertex&lt;T&gt;</a>(in));</div>
 <div class="line"><a id="l00408" name="l00408"></a><span class="lineno">  408</span>    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
 <div class="line"><a id="l00409" name="l00409"></a><span class="lineno">  409</span>}</div>
 <div class="line"><a id="l00410" name="l00410"></a><span class="lineno">  410</span> </div>
@@ -548,7 +548,7 @@ $(function(){initNavTree('graph_8h_source.html','',''); });
 <div class="line"><a id="l00452" name="l00452"></a><span class="lineno">  452</span><span class="comment"> */</span></div>
 <div class="line"><a id="l00453" name="l00453"></a><span class="lineno">  453</span><span class="keyword">template</span> &lt;<span class="keyword">class</span> T&gt;</div>
 <div class="line"><a id="l00454" name="l00454"></a><span class="lineno">  454</span><span class="keywordtype">bool</span> Graph&lt;T&gt;::removeEdge(<span class="keyword">const</span> T &amp;sourc, <span class="keyword">const</span> T &amp;dest) {</div>
-<div class="line"><a id="l00455" name="l00455"></a><span class="lineno">  455</span>    <a class="code hl_class" href="classVertex.html">Vertex&lt;T&gt;</a> * srcVertex = findVertex(sourc);</div>
+<div class="line"><a id="l00455" name="l00455"></a><span class="lineno">  455</span>    <a class="code hl_class" href="class_vertex.html">Vertex&lt;T&gt;</a> * srcVertex = findVertex(sourc);</div>
 <div class="line"><a id="l00456" name="l00456"></a><span class="lineno">  456</span>    <span class="keywordflow">if</span> (srcVertex == <span class="keyword">nullptr</span>) {</div>
 <div class="line"><a id="l00457" name="l00457"></a><span class="lineno">  457</span>        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
 <div class="line"><a id="l00458" name="l00458"></a><span class="lineno">  458</span>    }</div>
@@ -593,9 +593,9 @@ $(function(){initNavTree('graph_8h_source.html','',''); });
 <div class="line"><a id="l00497" name="l00497"></a><span class="lineno">  497</span>}</div>
 <div class="line"><a id="l00498" name="l00498"></a><span class="lineno">  498</span> </div>
 <div class="line"><a id="l00499" name="l00499"></a><span class="lineno">  499</span><span class="preprocessor">#endif </span><span class="comment">/* DA_TP_CLASSES_GRAPH */</span><span class="preprocessor"></span></div>
-<div class="ttc" id="aclassEdge_html"><div class="ttname"><a href="classEdge.html">Edge</a></div><div class="ttdef"><b>Definition</b> graph.h:73</div></div>
-<div class="ttc" id="aclassGraph_html"><div class="ttname"><a href="classGraph.html">Graph</a></div><div class="ttdef"><b>Definition</b> graph.h:104</div></div>
-<div class="ttc" id="aclassVertex_html"><div class="ttname"><a href="classVertex.html">Vertex</a></div><div class="ttdef"><b>Definition</b> graph.h:21</div></div>
+<div class="ttc" id="aclass_edge_html"><div class="ttname"><a href="class_edge.html">Edge</a></div><div class="ttdef"><b>Definition</b> graph.h:73</div></div>
+<div class="ttc" id="aclass_graph_html"><div class="ttname"><a href="class_graph.html">Graph</a></div><div class="ttdef"><b>Definition</b> graph.h:104</div></div>
+<div class="ttc" id="aclass_vertex_html"><div class="ttname"><a href="class_vertex.html">Vertex</a></div><div class="ttdef"><b>Definition</b> graph.h:21</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 </div><!-- container -->

@@ -1,13 +1,13 @@
 var annotated_dup =
 [
-    [ "Assignment", "structAssignment.html", null ],
-    [ "AssignmentResult", "structAssignmentResult.html", null ],
-    [ "Control", "structControl.html", null ],
-    [ "Dataset", "structDataset.html", null ],
-    [ "Edge", "classEdge.html", null ],
-    [ "Graph", "classGraph.html", null ],
-    [ "Parameters", "structParameters.html", null ],
-    [ "Reviewer", "structReviewer.html", null ],
-    [ "Submission", "structSubmission.html", null ],
-    [ "Vertex", "classVertex.html", null ]
+    [ "Assignment", "struct_assignment.html", null ],
+    [ "AssignmentResult", "struct_assignment_result.html", null ],
+    [ "Control", "struct_control.html", null ],
+    [ "Dataset", "struct_dataset.html", null ],
+    [ "Edge", "class_edge.html", null ],
+    [ "Graph", "class_graph.html", null ],
+    [ "Parameters", "struct_parameters.html", null ],
+    [ "Reviewer", "struct_reviewer.html", null ],
+    [ "Submission", "struct_submission.html", null ],
+    [ "Vertex", "class_vertex.html", null ]
 ];

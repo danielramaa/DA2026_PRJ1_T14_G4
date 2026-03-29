@@ -1,18 +1,24 @@
 var indexSectionsWithContent =
 {
-  0: "acdegprsv",
-  1: "acdegprsv"
+  0: "acdegmprsvw",
+  1: "acdegprsv",
+  2: "amp",
+  3: "prw"
 };
 
 var indexSectionNames =
 {
   0: "all",
-  1: "classes"
+  1: "classes",
+  2: "files",
+  3: "functions"
 };
 
 var indexSectionLabels =
 {
   0: "All",
-  1: "Classes"
+  1: "Classes",
+  2: "Files",
+  3: "Functions"
 };
 

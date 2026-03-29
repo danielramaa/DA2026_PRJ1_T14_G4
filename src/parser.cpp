@@ -1,6 +1,7 @@
-//
-// Created by danielramaa on 3/28/26.
-//
+/**
+ * @file parser.cpp
+ * @brief Dataset parsing utilities and input-file parsing implementation.
+ */
 #include "parser.h"
 #include <fstream>
 #include <sstream>

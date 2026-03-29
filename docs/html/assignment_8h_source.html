@@ -105,7 +105,7 @@ $(function(){initNavTree('assignment_8h_source.html','',''); });
 <div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &lt;tuple&gt;</span></div>
 <div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span></div>
 <div class="foldopen" id="foldopen00017" data-start="{" data-end="};">
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno"><a class="line" href="structAssignment.html">   17</a></span><span class="keyword">struct </span><a class="code hl_struct" href="structAssignment.html">Assignment</a> {</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno"><a class="line" href="struct_assignment.html">   17</a></span><span class="keyword">struct </span><a class="code hl_struct" href="struct_assignment.html">Assignment</a> {</div>
 <div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    <span class="keywordtype">int</span> submissionId;</div>
 <div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    <span class="keywordtype">int</span> reviewerId;</div>
 <div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    <span class="keywordtype">int</span> matchedDomain;</div>
@@ -113,25 +113,28 @@ $(function(){initNavTree('assignment_8h_source.html','',''); });
 </div>
 <div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span></div>
 <div class="foldopen" id="foldopen00026" data-start="{" data-end="};">
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno"><a class="line" href="structAssignmentResult.html">   26</a></span><span class="keyword">struct </span><a class="code hl_struct" href="structAssignmentResult.html">AssignmentResult</a> {</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno"><a class="line" href="struct_assignment_result.html">   26</a></span><span class="keyword">struct </span><a class="code hl_struct" href="struct_assignment_result.html">AssignmentResult</a> {</div>
 <div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    <span class="keywordtype">bool</span> success;</div>
 <div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    std::vector&lt;Assignment&gt; assignments;</div>
 <div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    std::vector&lt;std::tuple&lt;int,int,int&gt;&gt; missing; <span class="comment">// {submissionId, domain, missingCount}</span></div>
 <div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>};</div>
 </div>
 <div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span></div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span><a class="code hl_struct" href="structAssignmentResult.html">AssignmentResult</a> runAssignment(<span class="keyword">const</span> <a class="code hl_struct" href="structDataset.html">Dataset</a>&amp; ds, <span class="keywordtype">int</span> mode);</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span><a class="code hl_struct" href="struct_assignment_result.html">AssignmentResult</a> <a class="code hl_function" href="assignment_8cpp.html#a0b9a1f008d2c6bf4cc10cbabbd53b9f1">runAssignment</a>(<span class="keyword">const</span> <a class="code hl_struct" href="struct_dataset.html">Dataset</a>&amp; ds, <span class="keywordtype">int</span> mode);</div>
 <div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span></div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span><span class="keywordtype">void</span> writeOutput(<span class="keyword">const</span> std::string&amp; filename,</div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>                 <span class="keyword">const</span> <a class="code hl_struct" href="structAssignmentResult.html">AssignmentResult</a>&amp; result,</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span><span class="keywordtype">void</span> <a class="code hl_function" href="assignment_8cpp.html#ab6cdd9a1d8f65ec618699ce8606c4877">writeOutput</a>(<span class="keyword">const</span> std::string&amp; filename,</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>                 <span class="keyword">const</span> <a class="code hl_struct" href="struct_assignment_result.html">AssignmentResult</a>&amp; result,</div>
 <div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>                 <span class="keyword">const</span> std::vector&lt;int&gt;&amp; riskyReviewers,</div>
 <div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>                 <span class="keywordtype">int</span> riskK);</div>
 <div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span></div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>std::vector&lt;int&gt; runRiskAnalysis(<span class="keyword">const</span> <a class="code hl_struct" href="structDataset.html">Dataset</a>&amp; ds);</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>std::vector&lt;int&gt; <a class="code hl_function" href="assignment_8cpp.html#a11da9e6e8218e1f8e38100cbc8947f94">runRiskAnalysis</a>(<span class="keyword">const</span> <a class="code hl_struct" href="struct_dataset.html">Dataset</a>&amp; ds);</div>
 <div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span><span class="preprocessor">#endif</span></div>
-<div class="ttc" id="astructAssignmentResult_html"><div class="ttname"><a href="structAssignmentResult.html">AssignmentResult</a></div><div class="ttdoc">Stores assignment execution status, produced assignments, and unmet review requirements.</div><div class="ttdef"><b>Definition</b> assignment.h:26</div></div>
-<div class="ttc" id="astructAssignment_html"><div class="ttname"><a href="structAssignment.html">Assignment</a></div><div class="ttdoc">Represents one assignment between a submission and a reviewer with the matched domain.</div><div class="ttdef"><b>Definition</b> assignment.h:17</div></div>
-<div class="ttc" id="astructDataset_html"><div class="ttname"><a href="structDataset.html">Dataset</a></div><div class="ttdoc">Aggregates all parsed dataset sections and parser validity information.</div><div class="ttdef"><b>Definition</b> types.h:58</div></div>
+<div class="ttc" id="aassignment_8cpp_html_a0b9a1f008d2c6bf4cc10cbabbd53b9f1"><div class="ttname"><a href="assignment_8cpp.html#a0b9a1f008d2c6bf4cc10cbabbd53b9f1">runAssignment</a></div><div class="ttdeci">AssignmentResult runAssignment(const Dataset &amp;ds, int mode)</div><div class="ttdoc">Builds and solves the reviewer-assignment flow model for the provided dataset.</div><div class="ttdef"><b>Definition</b> assignment.cpp:127</div></div>
+<div class="ttc" id="aassignment_8cpp_html_a11da9e6e8218e1f8e38100cbc8947f94"><div class="ttname"><a href="assignment_8cpp.html#a11da9e6e8218e1f8e38100cbc8947f94">runRiskAnalysis</a></div><div class="ttdeci">std::vector&lt; int &gt; runRiskAnalysis(const Dataset &amp;ds)</div><div class="ttdoc">Finds reviewers whose removal makes the assignment problem infeasible.</div><div class="ttdef"><b>Definition</b> assignment.cpp:311</div></div>
+<div class="ttc" id="aassignment_8cpp_html_ab6cdd9a1d8f65ec618699ce8606c4877"><div class="ttname"><a href="assignment_8cpp.html#ab6cdd9a1d8f65ec618699ce8606c4877">writeOutput</a></div><div class="ttdeci">void writeOutput(const std::string &amp;filename, const AssignmentResult &amp;result, const std::vector&lt; int &gt; &amp;riskyReviewers, int riskK)</div><div class="ttdoc">Writes assignment results and optional risk-analysis details to a CSV-like output file.</div><div class="ttdef"><b>Definition</b> assignment.cpp:257</div></div>
+<div class="ttc" id="astruct_assignment_html"><div class="ttname"><a href="struct_assignment.html">Assignment</a></div><div class="ttdoc">Represents one assignment between a submission and a reviewer with the matched domain.</div><div class="ttdef"><b>Definition</b> assignment.h:17</div></div>
+<div class="ttc" id="astruct_assignment_result_html"><div class="ttname"><a href="struct_assignment_result.html">AssignmentResult</a></div><div class="ttdoc">Stores assignment execution status, produced assignments, and unmet review requirements.</div><div class="ttdef"><b>Definition</b> assignment.h:26</div></div>
+<div class="ttc" id="astruct_dataset_html"><div class="ttname"><a href="struct_dataset.html">Dataset</a></div><div class="ttdoc">Aggregates all parsed dataset sections and parser validity information.</div><div class="ttdef"><b>Definition</b> types.h:58</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 </div><!-- container -->

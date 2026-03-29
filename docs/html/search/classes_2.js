@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['dataset_0',['Dataset',['../structDataset.html',1,'']]]
+  ['dataset_0',['Dataset',['../struct_dataset.html',1,'']]]
 ];

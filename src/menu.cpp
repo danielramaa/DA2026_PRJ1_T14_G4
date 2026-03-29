@@ -1,3 +1,8 @@
+/**
+ * @file menu.cpp
+ * @brief Interactive and batch execution menu workflows.
+ */
+
 //
 // Created by danielramaa on 3/29/26.
 //
