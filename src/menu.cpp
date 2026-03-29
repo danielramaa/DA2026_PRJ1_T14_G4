@@ -42,11 +42,32 @@ void runInteractiveMenu() {
             }
         }
         else if (choice == "2") {
-            /* TODO */
+            if (!datasetLoaded) { std::cout << "No dataset loaded.\n"; continue; }
+            std::cout << "\n--- Submissions ---\n";
+            for (auto& s : currentDataset.submissions)
+                std::cout << "  " << s.id << " | " << s.title
+                          << " | primary: " << s.primaryTopic
+                          << " | secondary: " << s.secondaryTopic << "\n";
         } else if (choice == "3") {
-            /* TODO */
+            if (!datasetLoaded) { std::cout << "No dataset loaded.\n"; continue; }
+            std::cout << "\n--- Reviewers ---\n";
+            for (auto& r : currentDataset.reviewers)
+                std::cout << "  " << r.id << " | " << r.name
+                          << " | primary: " << r.primaryTopic
+                          << " | secondary: " << r.secondaryTopic << "\n";
         } else if (choice == "4") {
-            /* TODO */
+            if (!datasetLoaded) { std::cout << "No dataset loaded.\n"; continue; }
+            std::cout << "\n--- Parameters ---\n";
+            std::cout << "MinReviewsPerSubmission:    " << currentDataset.params.minReviewsPerSubmission    << "\n";
+            std::cout << "MaxReviewsPerReviewer:      " << currentDataset.params.maxReviewsPerReviewer      << "\n";
+            std::cout << "PrimaryReviewerExpertise:   " << currentDataset.params.primaryReviewerExpertise   << "\n";
+            std::cout << "SecondaryReviewerExpertise: " << currentDataset.params.secondaryReviewerExpertise << "\n";
+            std::cout << "PrimarySubmissionDomain:    " << currentDataset.params.primarySubmissionDomain    << "\n";
+            std::cout << "SecondarySubmissionDomain:  " << currentDataset.params.secondarySubmissionDomain  << "\n";
+            std::cout << "\n--- Control ---\n";
+            std::cout << "GenerateAssignments: " << currentDataset.control.generateAssignments << "\n";
+            std::cout << "RiskAnalysis:        " << currentDataset.control.riskAnalysis        << "\n";
+            std::cout << "OutputFileName:      " << currentDataset.control.outputFileName      << "\n";
         } else {
             std::cout << "Invalid option.\n";
         }
