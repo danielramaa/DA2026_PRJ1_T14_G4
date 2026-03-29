@@ -229,3 +229,24 @@ void writeOutput(const std::string& filename,
 
     out.close();
 }
+
+std::vector<int> runRiskAnalysis(const Dataset& ds) {
+    std::vector<int> riskyReviewers;
+    int mode = ds.control.generateAssignments;
+
+    for (size_t j = 0; j < ds.reviewers.size(); j++) {
+        // Temp dataset without reviewer j
+        Dataset temp = ds;
+        temp.reviewers.erase(temp.reviewers.begin() + j);
+
+        // Run without reviewer
+        AssignmentResult result = runAssignment(temp, mode);
+
+        // if failed, critical reviewer
+        if (!result.success)
+            riskyReviewers.push_back(ds.reviewers[j].id);
+    }
+
+    std::sort(riskyReviewers.begin(), riskyReviewers.end());
+    return riskyReviewers;
+}

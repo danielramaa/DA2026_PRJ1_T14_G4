@@ -30,4 +30,5 @@ void writeOutput(const std::string& filename,
                  const std::vector<int>& riskyReviewers,
                  int riskK);
 
+std::vector<int> runRiskAnalysis(const Dataset& ds);
 #endif

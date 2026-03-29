@@ -3,15 +3,19 @@
 #include <iostream>
 
 int main() {
-    Dataset ds = parseInputFile("dataset1.csv");
+    Dataset ds = parseInputFile("dataset3.csv");
     AssignmentResult result = runAssignment(ds, 1);
 
-    std::cout << "Success: " << result.success << "\n";
-    std::cout << "Assignments: " << result.assignments.size() << "\n";
-    std::cout << "Missing: " << result.missing.size() << "\n";
+    std::vector<int> risky = runRiskAnalysis(ds);
 
-    writeOutput(ds.control.outputFileName, result, {}, 0);
-    std::cout << "Output written to: " << ds.control.outputFileName << "\n";
+    std::cout << "Risky reviewers: ";
+    if (risky.empty())
+        std::cout << "none\n";
+    else
+        for (int id : risky) std::cout << id << " ";
+    std::cout << "\n";
+
+    writeOutput(ds.control.outputFileName, result, risky, ds.control.riskAnalysis);
 
     return 0;
 }
