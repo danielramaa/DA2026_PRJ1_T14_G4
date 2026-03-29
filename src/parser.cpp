@@ -42,7 +42,26 @@ Dataset parseInputFile(const std::string& filename) {
         return ds;
     }
 
-    // TODO: parsing
+    enum Section { NONE, SUBMISSIONS, REVIEWERS, PARAMETERS, CONTROL };
+    Section section = NONE;
+    std::string line;
+
+    while (std::getline(fin, line)) {
+        // Remove spaces in the end
+        while (!line.empty() && (line.back() == '\r' || line.back() == ' '))
+            line.pop_back();
+
+        if (line.empty()) continue;
+
+        if (line == "#Submissions") { section = SUBMISSIONS; continue; }
+        if (line == "#Reviewers")   { section = REVIEWERS;   continue; }
+        if (line == "#Parameters")  { section = PARAMETERS;  continue; }
+        if (line == "#Control")     { section = CONTROL;     continue; }
+
+        if (line[0] == '#') continue;
+
+        // TODO: processar cada secção
+    }
 
     return ds;
 }
