@@ -16,7 +16,14 @@ static const int SUB_BASE = 2000;
 static const int REV_BASE = 4000;
 
 
-// adds forward (cap) & backward (0) edges linked by reverse for flow
+/**
+ * @brief Adds a forward and reverse edge pair to build residual-capacity flow graph links.
+ * @param g Flow graph to update.
+ * @param from Origin node ID.
+ * @param to Destination node ID.
+ * @param cap Capacity of the forward edge.
+ * @complexity O(V), due to vertex lookup/creation operations in the underlying graph structure.
+ */
 static void addResidualEdge(Graph<int>& g, int from, int to, double cap) {
     g.addVertex(from);
     g.addVertex(to);
@@ -30,7 +37,15 @@ static void addResidualEdge(Graph<int>& g, int from, int to, double cap) {
     bwd->setFlow(0);
 }
 
-// BFS
+/**
+ * @brief Runs breadth-first search on the residual graph to find an augmenting path.
+ * @param g Residual graph.
+ * @param s Source node ID.
+ * @param t Sink node ID.
+ * @param parent Map populated with predecessor edges for path reconstruction.
+ * @return True if an augmenting path from source to sink is found, false otherwise.
+ * @complexity O(V + E), where V is number of vertices and E is number of edges.
+ */
 static bool bfs(Graph<int>& g, int s, int t, std::map<int, Edge<int>*>& parent) {
     for (auto v : g.getVertexSet())
         v->setVisited(false);
@@ -61,7 +76,14 @@ static bool bfs(Graph<int>& g, int s, int t, std::map<int, Edge<int>*>& parent) 
     return false;
 }
 
-// edmonds-Karp
+/**
+ * @brief Computes maximum flow from source to sink using the Edmonds-Karp algorithm.
+ * @param g Residual graph containing capacities.
+ * @param s Source node ID.
+ * @param t Sink node ID.
+ * @return Maximum flow value pushed from source to sink.
+ * @complexity O(VE^2), where V is number of vertices and E is number of edges.
+ */
 static double edmondsKarp(Graph<int>& g, int s, int t) {
     for (auto v : g.getVertexSet())
         for (auto e : v->getAdj())
@@ -94,6 +116,13 @@ static double edmondsKarp(Graph<int>& g, int s, int t) {
     return totalFlow;
 }
 
+/**
+ * @brief Builds and solves the reviewer-assignment flow model for the provided dataset.
+ * @param ds Parsed dataset with submissions, reviewers, and assignment controls.
+ * @param mode Matching mode controlling which topic matches are allowed.
+ * @return AssignmentResult containing produced assignments and unmet review requirements.
+ * @complexity O(VE^2 + S*R), dominated by max-flow; S is submissions and R is reviewers.
+ */
 AssignmentResult runAssignment(const Dataset& ds, int mode) {
     AssignmentResult result;
     result.success = true;
@@ -216,6 +245,14 @@ AssignmentResult runAssignment(const Dataset& ds, int mode) {
     return result;
 }
 
+/**
+ * @brief Writes assignment results and optional risk-analysis details to a CSV-like output file.
+ * @param filename Output file path.
+ * @param result Assignment result to export.
+ * @param riskyReviewers List of risky reviewer IDs.
+ * @param riskK Risk-analysis flag/value that controls risk section emission.
+ * @complexity O(A log R + M + K), where A is assignments, R is reviewers present in assignment map, M is missing entries, and K is risky reviewers.
+ */
 void writeOutput(const std::string& filename,
                  const AssignmentResult& result,
                  const std::vector<int>& riskyReviewers,
@@ -264,6 +301,12 @@ void writeOutput(const std::string& filename,
     out.close();
 }
 
+/**
+ * @brief Finds reviewers whose removal makes the assignment problem infeasible.
+ * @param ds Baseline dataset used for leave-one-reviewer-out simulation.
+ * @return Sorted reviewer IDs classified as risky.
+ * @complexity O(R * T), where R is number of reviewers and T is one runAssignment execution.
+ */
 std::vector<int> runRiskAnalysis(const Dataset& ds) {
     std::vector<int> riskyReviewers;
     int mode = ds.control.generateAssignments;

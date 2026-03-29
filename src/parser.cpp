@@ -6,7 +6,12 @@
 #include <sstream>
 #include <iostream>
 
-// Remove leading/trailing whitespace and surrounding quotes
+/**
+ * @brief Removes leading/trailing whitespace and surrounding double quotes from a field.
+ * @param s Raw input string.
+ * @return Normalized string without outer whitespace and optional enclosing quotes.
+ * @complexity O(n), where n is the length of the input string.
+ */
 static std::string trim(const std::string& s) {
     const size_t start = s.find_first_not_of(" \t\r\n");
     if (start == std::string::npos) return "";
@@ -17,7 +22,12 @@ static std::string trim(const std::string& s) {
     return r;
 }
 
-// Split the CSV line into fields, respecting quoted fields
+/**
+ * @brief Splits a CSV line into trimmed fields while preserving commas inside quoted text.
+ * @param line Raw CSV line.
+ * @return Vector with parsed and trimmed field strings.
+ * @complexity O(n), where n is the length of the line.
+ */
 static std::vector<std::string> splitCSV(const std::string& line) {
     std::vector<std::string> fields;
     std::string field;
@@ -32,6 +42,12 @@ static std::vector<std::string> splitCSV(const std::string& line) {
 }
 
 
+/**
+ * @brief Parses a dataset file with submissions, reviewers, parameters, and control sections.
+ * @param filename Path to the dataset CSV-like input file.
+ * @return Dataset object containing parsed records and validity/error metadata.
+ * @complexity O(N), where N is the total number of characters read from the file.
+ */
 Dataset parseInputFile(const std::string& filename) {
     Dataset ds;
 

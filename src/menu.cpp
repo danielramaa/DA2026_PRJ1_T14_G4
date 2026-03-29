@@ -11,6 +11,10 @@
 static Dataset currentDataset;
 static bool datasetLoaded = false;
 
+/**
+ * @brief Provides an interactive CLI menu to load datasets, inspect data, and run assignment workflows.
+ * @complexity Per loop iteration O(1) for menu handling, O(S) or O(R) for listing, and up to O(T + R*T) when running assignment with optional risk analysis.
+ */
 void runInteractiveMenu() {
     std::string choice;
 
@@ -92,6 +96,12 @@ void runInteractiveMenu() {
     }
 }
 
+/**
+ * @brief Executes the full assignment pipeline in non-interactive batch mode.
+ * @param inputFile Path to the input dataset file.
+ * @param outputFile Optional output path override. If empty, the dataset default is used.
+ * @complexity O(T + R*T), where T is the complexity of runAssignment and R is number of reviewers if risk analysis runs.
+ */
 void runBatchMode(const std::string& inputFile, const std::string& outputFile) {
     Dataset ds = parseInputFile(inputFile);
     if (!ds.valid) {
