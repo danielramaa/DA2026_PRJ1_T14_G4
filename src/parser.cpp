@@ -103,6 +103,18 @@ Dataset parseInputFile(const std::string& filename) {
             else if (key == "PrimarySubmissionDomain")    ds.params.primarySubmissionDomain    = val;
             else if (key == "SecondarySubmissionDomain")  ds.params.secondarySubmissionDomain  = val;
         }
+
+        else if (section == CONTROL) {
+            auto f = splitCSV(line);
+            if (f.size() < 2) continue;
+
+            const std::string& key = f[0];
+            const std::string& val = f[1];
+
+            if      (key == "GenerateAssignments") ds.control.generateAssignments = std::stoi(val);
+            else if (key == "RiskAnalysis")        ds.control.riskAnalysis        = std::stoi(val);
+            else if (key == "OutputFileName")      ds.control.outputFileName      = val;
+        }
     }
 
     return ds;
