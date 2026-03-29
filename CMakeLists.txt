@@ -12,4 +12,6 @@ add_executable(DA2026_PRJ1_T14_G3
         include/parser.h
         src/parser.cpp
         src/menu.cpp
-        include/menu.h)
+        include/menu.h
+        src/assignment.cpp
+        include/assignment.h)
