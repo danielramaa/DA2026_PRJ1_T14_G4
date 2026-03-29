@@ -9,4 +9,5 @@ add_executable(DA2026_PRJ1_T14_G3
         src/main.cpp
         include/types.h
         include/graph.h
-        include/parser.h)
+        include/parser.h
+        src/parser.cpp)
