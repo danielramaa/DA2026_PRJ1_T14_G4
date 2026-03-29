@@ -1,0 +1,24 @@
+var NAVTREEINDEX0 =
+{
+"annotated.html":[0,0],
+"assignment_8h_source.html":[1,0,0,0],
+"classEdge.html":[0,0,4],
+"classGraph.html":[0,0,5],
+"classVertex.html":[0,0,9],
+"classes.html":[0,1],
+"dir_d44c64559bbebec7f509842c48db8b23.html":[1,0,0],
+"files.html":[1,0],
+"graph_8h_source.html":[1,0,0,1],
+"index.html":[],
+"menu_8h_source.html":[1,0,0,2],
+"pages.html":[],
+"parser_8h_source.html":[1,0,0,3],
+"structAssignment.html":[0,0,0],
+"structAssignmentResult.html":[0,0,1],
+"structControl.html":[0,0,2],
+"structDataset.html":[0,0,3],
+"structParameters.html":[0,0,6],
+"structReviewer.html":[0,0,7],
+"structSubmission.html":[0,0,8],
+"types_8h_source.html":[1,0,0,4]
+};
