@@ -88,6 +88,21 @@ Dataset parseInputFile(const std::string& filename) {
 
             ds.reviewers.push_back(r);
         }
+
+        else if (section == PARAMETERS) {
+            auto f = splitCSV(line);
+            if (f.size() < 2) continue;
+
+            const std::string& key = f[0];
+            int val = std::stoi(f[1]);
+
+            if      (key == "MinReviewsPerSubmission")    ds.params.minReviewsPerSubmission    = val;
+            else if (key == "MaxReviewsPerReviewer")      ds.params.maxReviewsPerReviewer      = val;
+            else if (key == "PrimaryReviewerExpertise")   ds.params.primaryReviewerExpertise   = val;
+            else if (key == "SecondaryReviewerExpertise") ds.params.secondaryReviewerExpertise = val;
+            else if (key == "PrimarySubmissionDomain")    ds.params.primarySubmissionDomain    = val;
+            else if (key == "SecondarySubmissionDomain")  ds.params.secondarySubmissionDomain  = val;
+        }
     }
 
     return ds;
