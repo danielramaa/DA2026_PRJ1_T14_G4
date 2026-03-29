@@ -125,8 +125,17 @@ AssignmentResult runAssignment(const Dataset& ds, int mode) {
             int match = 0;
 
             // mode 1: only primary topics
-            if (ds.submissions[i].primaryTopic == ds.reviewers[j].primaryTopic)
-                match = ds.submissions[i].primaryTopic;
+            if (mode == 1) {
+                if (ds.submissions[i].primaryTopic == ds.reviewers[j].primaryTopic)
+                    match = ds.submissions[i].primaryTopic;
+            }
+            else if (mode == 2) {
+                if (ds.submissions[i].primaryTopic == ds.reviewers[j].primaryTopic)
+                    match = ds.submissions[i].primaryTopic;
+                else if (ds.submissions[i].secondaryTopic != 0 &&
+                         ds.submissions[i].secondaryTopic == ds.reviewers[j].primaryTopic)
+                    match = ds.submissions[i].secondaryTopic;
+            }
 
             if (match != 0)
                 addResidualEdge(g, subNode, revNode, 1);
@@ -135,6 +144,31 @@ AssignmentResult runAssignment(const Dataset& ds, int mode) {
 
     // edmonds-Karp
     edmondsKarp(g, SOURCE, SINK);
+
+    // store the matched topic for each (submission node, reviewer node) pair
+    std::map<std::pair<int, int>, int> matchMap;
+    for (int i = 0; i < (int)ds.submissions.size(); i++) {
+        for (int j = 0; j < (int)ds.reviewers.size(); j++) {
+            int subNode = SUB_BASE + i;
+            int revNode = REV_BASE + j;
+            int match = 0;
+
+            if (mode == 1) {
+                if (ds.submissions[i].primaryTopic == ds.reviewers[j].primaryTopic)
+                    match = ds.submissions[i].primaryTopic;
+            }
+            else if (mode == 2) {
+                if (ds.submissions[i].primaryTopic == ds.reviewers[j].primaryTopic)
+                    match = ds.submissions[i].primaryTopic;
+                else if (ds.submissions[i].secondaryTopic != 0 &&
+                         ds.submissions[i].secondaryTopic == ds.reviewers[j].primaryTopic)
+                    match = ds.submissions[i].secondaryTopic;
+            }
+
+            if (match != 0)
+                matchMap[{subNode, revNode}] = match;
+        }
+    }
 
     // extract assignments with flow > 0
     for (int i = 0; i < (int)ds.submissions.size(); i++) {
@@ -151,7 +185,7 @@ AssignmentResult runAssignment(const Dataset& ds, int mode) {
             Assignment a;
             a.submissionId  = ds.submissions[i].id;
             a.reviewerId    = ds.reviewers[j].id;
-            a.matchedDomain = ds.submissions[i].primaryTopic;
+            a.matchedDomain = matchMap[{subNode, destInfo}];
             result.assignments.push_back(a);
         }
     }
