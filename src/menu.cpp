@@ -6,6 +6,7 @@
 #include "parser.h"
 #include "types.h"
 #include <iostream>
+#include "assignment.h"
 
 static Dataset currentDataset;
 static bool datasetLoaded = false;
@@ -19,6 +20,7 @@ void runInteractiveMenu() {
         std::cout << "2. List submissions\n";
         std::cout << "3. List reviewers\n";
         std::cout << "4. Show parameters\n";
+        std::cout << "5. Run assignment\n";
         std::cout << "0. Exit\n";
         std::cout << "Choice: ";
         std::getline(std::cin, choice);
@@ -68,6 +70,22 @@ void runInteractiveMenu() {
             std::cout << "GenerateAssignments: " << currentDataset.control.generateAssignments << "\n";
             std::cout << "RiskAnalysis:        " << currentDataset.control.riskAnalysis        << "\n";
             std::cout << "OutputFileName:      " << currentDataset.control.outputFileName      << "\n";
+        } else if (choice == "5") {
+            if (!datasetLoaded) { std::cout << "No dataset loaded.\n"; continue; }
+
+            int mode = currentDataset.control.generateAssignments;
+            AssignmentResult result = runAssignment(currentDataset, mode);
+
+            std::vector<int> risky;
+            if (currentDataset.control.riskAnalysis > 0)
+                risky = runRiskAnalysis(currentDataset);
+
+            writeOutput(currentDataset.control.outputFileName, result, risky, currentDataset.control.riskAnalysis);
+
+            if (result.success)
+                std::cout << "Assignment successful! Total: " << result.assignments.size() << " reviews.\n";
+            else
+                std::cout << "Assignment incomplete. Output written to: " << currentDataset.control.outputFileName << "\n";
         } else {
             std::cout << "Invalid option.\n";
         }
@@ -75,5 +93,21 @@ void runInteractiveMenu() {
 }
 
 void runBatchMode(const std::string& inputFile, const std::string& outputFile) {
-    /* TODO */
+    Dataset ds = parseInputFile(inputFile);
+    if (!ds.valid) {
+        std::cerr << "Error: " << ds.errorMsg << "\n";
+        return;
+    }
+
+    if (!outputFile.empty())
+        ds.control.outputFileName = outputFile;
+
+    int mode = ds.control.generateAssignments;
+    AssignmentResult result = runAssignment(ds, mode);
+
+    std::vector<int> risky;
+    if (ds.control.riskAnalysis > 0)
+        risky = runRiskAnalysis(ds);
+
+    writeOutput(ds.control.outputFileName, result, risky, ds.control.riskAnalysis);
 }

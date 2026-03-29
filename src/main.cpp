@@ -1,21 +1,13 @@
-#include "assignment.h"
-#include "parser.h"
-#include <iostream>
+#include "menu.h"
+#include <string>
 
-int main() {
-    Dataset ds = parseInputFile("dataset3.csv");
-    AssignmentResult result = runAssignment(ds, 1);
-
-    std::vector<int> risky = runRiskAnalysis(ds);
-
-    std::cout << "Risky reviewers: ";
-    if (risky.empty())
-        std::cout << "none\n";
-    else
-        for (int id : risky) std::cout << id << " ";
-    std::cout << "\n";
-
-    writeOutput(ds.control.outputFileName, result, risky, ds.control.riskAnalysis);
-
+int main(int argc, char* argv[]) {
+    if (argc >= 3 && std::string(argv[1]) == "-b") {
+        std::string inputFile  = argv[2];
+        std::string outputFile = (argc >= 4) ? argv[3] : "";
+        runBatchMode(inputFile, outputFile);
+    } else {
+        runInteractiveMenu();
+    }
     return 0;
 }
